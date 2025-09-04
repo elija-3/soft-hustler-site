@@ -131,4 +131,28 @@ a{ color: #0f766e; }
 
 /* ---------- REVEAL ---------- */
 .reveal{ opacity:0; transform: translateY(14px) scale(.98); transition: all .6s cubic-bezier(.2,.7,.2,1); }
+
 .reveal.in{ opacity:1; transform: none; }
+
+/* Default: one-line brand (desktop + most phones) */
+.brand{
+  gap:.35rem;
+  white-space:nowrap;
+  flex-wrap:nowrap;
+}
+
+/* Tweak sizes for typical phones */
+@media (max-width: 480px){
+  .brand{ font-size:.95rem; }
+  .brand-mark{ font-size:1rem; }
+}
+
+/* Very narrow screens: stack cleanly */
+@media (max-width: 380px){
+  .brand{
+    white-space:normal;   /* allow wrap */
+    flex-wrap:wrap;
+    row-gap:2px;
+    column-gap:.35rem;
+  }
+}
